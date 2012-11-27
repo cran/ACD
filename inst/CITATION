@@ -1,0 +1,15 @@
+citHeader("To cite ACD in publications use:")
+
+citEntry(entry  = "Manual",
+								title  = "ACD",
+								author = "Author:Frederico Zanqueta Poleto, Julio da Mota Singer, Daniel Carlos Paulino, Fabio Mathias Correa and Enio Galinkin Jelihovschi",
+								year         = version$year,
+								textVersion = 
+								paste("Poleto, F.Z., Singer,J.M., Paulino, D.C., Correa, F.M., Jelihovschi, E.G. (", version$year, ").",
+												"ACD. Available on CRAN.", sep="")
+								)
+
+citFooter("Lots of time and effort were invested in creating ACD.",
+								"Please, cite it when using it together with R.",
+								"See also", sQuote("citation()"),
+								"for citing R.")

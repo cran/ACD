@@ -1,0 +1,22 @@
+export("funlinWLS", 
+								"linML", 
+								"loglinML", 
+								"readCatdata",
+								"satMarML",
+								"satMcarWLS",
+								"waldTest")
+
+S3method(summary,linML)
+S3method(summary,funlinWLS)
+S3method(summary,loglinML)
+S3method(summary,readCatdata)
+S3method(summary,satMarML)
+S3method(summary,satMcarWLS)
+S3method(summary,waldTest)
+S3method(print,linML)
+S3method(print,funlinWLS)
+S3method(print,loglinML)
+S3method(print,readCatdata)
+S3method(print,satMarML)
+S3method(print,satMcarWLS)
+S3method(print,waldTest)
