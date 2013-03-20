@@ -2,7 +2,7 @@
 \alias{satMarML}
 
 \title{Fitting Saturated Models for the Marginal Probabilities of Categorization via 
-				Maximum Likelihood under MAR and MCAR assumption}
+	Maximum Likelihood under MAR and MCAR assumption}
 
 \description{
 	\code{satMarML} fits saturated models for the marginal probabilities of 
@@ -15,7 +15,7 @@
 }
 
 \usage{satMarML(catdataobj, missing="MAR", method="EM", start, zero, 
-				maxit=100, trace=0, epsilon1=1e-6, epsilon2=1e-6, zeroN, digits) 
+maxit=100, trace=0, epsilon1=1e-6, epsilon2=1e-6, zeroN, digits) 
 }
 
 \arguments{
@@ -78,82 +78,82 @@
 	An object of the class \code{satMarML} is a list containing most of the components of the 
 	\code{readCatdata} source object informed in the argument \code{catdataobj} as well as
 	the following components:
-  \item{theta}{vector of ML estimates for all product-multinomial probabilities under the saturated 
-  	model for the marginal probabilities of categorization and an assumption of an ignorable missingness 
-  	mechanism; this is the same under MAR and under MCAR.}
-  \item{Vtheta}{corresponding estimated covariance matrix based on the Fisher information matrix 
-  	obtained under the assumed missingness mechanism, leading to different results depending whether the 
-  	assumption is MAR or MCAR).}
-  \item{QvMCAR}{likelihood ratio statistic for the conditional test of MCAR given a MAR assumption.}
-  \item{QpMCAR}{Pearson statistic for the conditional test of MCAR given a MAR assumption.}
-  \item{QnMCAR}{Neyman statistic for the conditional test of MCAR given a MAR assumption.}
-  \item{glMCAR}{degrees of freedom for the conditional tests of MCAR given a MAR assumption.}
-  \item{alphast}{ML estimates for the conditional probabilities of missingness under the assumed 
-  	missingness mechanism (MAR or MCAR).}
-  \item{yst}{ML estimates for the augmented frequencies under the saturated model for the marginal 
-  	probabilities and the assumed missingness mechanism (MAR or MCAR).}
+	\item{theta}{vector of ML estimates for all product-multinomial probabilities under the saturated 
+		model for the marginal probabilities of categorization and an assumption of an ignorable missingness 
+		mechanism; this is the same under MAR and under MCAR.}
+	\item{Vtheta}{corresponding estimated covariance matrix based on the Fisher information matrix 
+		obtained under the assumed missingness mechanism, leading to different results depending whether the 
+		assumption is MAR or MCAR).}
+	\item{QvMCAR}{likelihood ratio statistic for the conditional test of MCAR given a MAR assumption.}
+	\item{QpMCAR}{Pearson statistic for the conditional test of MCAR given a MAR assumption.}
+	\item{QnMCAR}{Neyman statistic for the conditional test of MCAR given a MAR assumption.}
+	\item{glMCAR}{degrees of freedom for the conditional tests of MCAR given a MAR assumption.}
+	\item{alphast}{ML estimates for the conditional probabilities of missingness under the assumed 
+		missingness mechanism (MAR or MCAR).}
+	\item{yst}{ML estimates for the augmented frequencies under the saturated model for the marginal 
+		probabilities and the assumed missingness mechanism (MAR or MCAR).}
 }
 
 \references{
-				Paulino, C.D. e Singer, J.M. (2006). \emph{Analise de dados categorizados} 
-				(in Portuguese). Sao Paulo: Edgard Blucher.
+	Paulino, C.D. e Singer, J.M. (2006). \emph{Analise de dados categorizados} 
+	(in Portuguese). Sao Paulo: Edgard Blucher.
 
-				Poleto, F.Z. (2006). \emph{Analise de dados categorizados com omissao} (in 
-				Portuguese). Dissertacao de mestrado. IME-USP. 
-				\url{http://www.poleto.com/missing.html}.
+	Poleto, F.Z. (2006). \emph{Analise de dados categorizados com omissao} (in 
+	Portuguese). Dissertacao de mestrado. IME-USP. 
+	\url{http://www.poleto.com/missing.html}.
 
-				Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2007). \emph{Analyzing categorical 
-								data with complete or missing responses using the Catdata package}. Unpublished 
-				vignette. \url{http://www.poleto.com/missing.html}.
+	Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2007). \emph{Analyzing categorical 
+		data with complete or missing responses using the Catdata package}. Unpublished 
+	vignette. \url{http://www.poleto.com/missing.html}.
 
-				Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2012). A product-multinomial 
-				framework for categorical data analysis with missing responses. 
-				To appear in \emph{Brazilian Journal of Probability and Statistics}. 
-				\url{http://imstat.org/bjps/papers/BJPS198.pdf}.
+	Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2012). A product-multinomial 
+	framework for categorical data analysis with missing responses. 
+	To appear in \emph{Brazilian Journal of Probability and Statistics}. 
+	\url{http://imstat.org/bjps/papers/BJPS198.pdf}.
 
-				Singer, J. M., Poleto, F. Z. and Paulino, C. D. (2007). Catdata: software for 
-				analysis of categorical data with complete or missing responses. \emph{Actas 
-								de la XII Reunion Cientifica del Grupo Argentino de Biometria y I Encuentro 
-								Argentino-Chileno de Biometria}. 
-				\url{http://www.poleto.com/SingerPoletoPaulino2007GAB.pdf}.
+	Singer, J. M., Poleto, F. Z. and Paulino, C. D. (2007). Catdata: software for 
+	analysis of categorical data with complete or missing responses. \emph{Actas 
+		de la XII Reunion Cientifica del Grupo Argentino de Biometria y I Encuentro 
+		Argentino-Chileno de Biometria}. 
+	\url{http://www.poleto.com/SingerPoletoPaulino2007GAB.pdf}.
 }
 
 \examples{
-				#Example 13.4 of Paulino and Singer (2006)
-				e134.TF<-c(12,4,5,2, 50,31, 27,12)
-				e134.Zp<-cbind(kronecker(diag(2),rep(1,2)),kronecker(rep(1,2),diag(2)))
-				e134.Rp<-c(2,2)
-				e134.catdata<-readCatdata(TF=e134.TF,Zp=e134.Zp,Rp=e134.Rp)
-				e134.satmcarml<-satMarML(e134.catdata,missing="MCAR")
-				e134.satmarml<-satMarML(e134.catdata,method="FS-MCAR")
-				e134.satmarml2<-satMarML(e134.catdata,method="NR/FS-MAR")
-				e134.satmcarml
+#Example 13.4 of Paulino and Singer (2006)
+e134.TF<-c(12,4,5,2, 50,31, 27,12)
+e134.Zp<-cbind(kronecker(diag(2),rep(1,2)),kronecker(rep(1,2),diag(2)))
+e134.Rp<-c(2,2)
+e134.catdata<-readCatdata(TF=e134.TF,Zp=e134.Zp,Rp=e134.Rp)
+e134.satmcarml<-satMarML(e134.catdata,missing="MCAR")
+e134.satmarml<-satMarML(e134.catdata,method="FS-MCAR")
+e134.satmarml2<-satMarML(e134.catdata,method="NR/FS-MAR")
+e134.satmcarml
 
-				#Compare the estimates of the probabilities, standard errors, 
-				#number of iterations and augmented frequencies
-				summary(e134.satmcarml)
-				summary(e134.satmarml)
-				summary(e134.satmarml2)
+#Compare the estimates of the probabilities, standard errors, 
+#number of iterations and augmented frequencies
+summary(e134.satmcarml)
+summary(e134.satmarml)
+summary(e134.satmarml2)
 
-				#Example 1 of Poleto et al (2012)
-				smoking.TF<-rbind(c(167,17,19,10,1,3,52,10,11, 176,24,121, 28,10,12),
-				c(120,22,19, 8,5,1,39,12,12, 103, 3, 80, 31, 8,14))
+#Example 1 of Poleto et al (2012)
+smoking.TF<-rbind(c(167,17,19,10,1,3,52,10,11, 176,24,121, 28,10,12),
+				  c(120,22,19, 8,5,1,39,12,12, 103, 3, 80, 31, 8,14))
 
-				smoking.Zp <- kronecker(t(rep(1,2)),
-																		cbind(kronecker(diag(3),rep(1,3)),
-																		kronecker(rep(1,3),diag(3))))
+smoking.Zp <- kronecker(t(rep(1,2)),
+					cbind(kronecker(diag(3),rep(1,3)),
+  				    kronecker(rep(1,3),diag(3))))
 
-				smoking.Rp<-rbind(c(3,3),c(3,3))
-				smoking.catdata<-readCatdata(TF=smoking.TF,Zp=smoking.Zp,Rp=smoking.Rp)
-				smoking.catdata
+smoking.Rp<-rbind(c(3,3),c(3,3))
+smoking.catdata<-readCatdata(TF=smoking.TF,Zp=smoking.Zp,Rp=smoking.Rp)
+smoking.catdata
 
-				smoking.satmcarml<-satMarML(smoking.catdata,missing="MCAR")
-				smoking.satmarml<-satMarML(smoking.catdata,method="FS-MCAR")
-				smoking.satmarml2<-satMarML(smoking.catdata,method="NR/FS-MAR")
-				smoking.satmarml
-				summary(smoking.satmcarml)
-				summary(smoking.satmarml)
-				summary(smoking.satmarml2)
+smoking.satmcarml<-satMarML(smoking.catdata,missing="MCAR")
+smoking.satmarml<-satMarML(smoking.catdata,method="FS-MCAR")
+smoking.satmarml2<-satMarML(smoking.catdata,method="NR/FS-MAR")
+smoking.satmarml
+summary(smoking.satmcarml)
+summary(smoking.satmarml)
+summary(smoking.satmarml2)
 }
 
 \keyword{categorical data}

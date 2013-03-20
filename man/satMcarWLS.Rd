@@ -17,7 +17,7 @@
 \arguments{
 	\item{catdataobj}{\code{readCatdata} object.}
 	\item{zeroN}{values used to replace null frequencies in the denominator of the Neyman statistic; 
-		by default, the function replaces the values by \code{1/(R*nst)}, where \var{nst} 
+		by default, the function replaces the values by \preformatted{1/(R*nst)}, where \var{nst} 
 		is the sample size of the missingness pattern associated to the corresponding subpopulation; 
 		the user may indicate alternative values in a matrix with \var{S} rows and an additional column 
 		relatively to the number of columns of \var{Rp}; the first column relates to the completely 
@@ -32,7 +32,7 @@
 
 \value{
 	An object of the class \code{satMcarWLS} is a list containing most of the components of the 
-	\code{readCatdata} source object informed in the argument \code{catdataobj} as well as
+	\code{readCatdata} source object informed in the argument \preformatted{catdataobj} as well as
 	the following components:
   \item{theta}{vector of WLS estimates for all product-multinomial probabilities under the saturated 
   	model for the marginal probabilities of categorization and a MCAR assumption.}
@@ -43,6 +43,14 @@
   	probabilities and the MCAR mechanism.}
 }
 
+\author{
+	Frederico Zanqueta Poleto(\email{frederico@poleto.com})\cr
+	Julio da Motta Singer (\email{jmsinger@ime.usp.br})\cr
+	Carlos Daniel Paulino (\email{daniel.paulino@math.ist.utl.pt})\cr
+with the collaboration of \cr
+	Fabio Mathias Correa (\email{fmcorrea@uesc.br})\cr
+	Enio Galinkin Jelihovschi (\email{eniojelihovs@gmail.com})\cr
+}
 \references{
 				Paulino, C.D. e Singer, J.M. (2006). \emph{Analise de dados categorizados} 
 				(in Portuguese). Sao Paulo: Edgard Blucher.
@@ -78,17 +86,13 @@
 	
 	#Example 1 of Poleto et al (2012)
 	smoking.TF<-rbind(c(167,17,19,10,1,3,52,10,11, 176,24,121, 28,10,12),
-	c(120,22,19, 8,5,1,39,12,12, 103, 3, 80, 31, 8,14))
-
-	smoking.Zp <- kronecker(t(rep(1,2)),
-															cbind(kronecker(diag(3),rep(1,3)),
-															kronecker(rep(1,3),diag(3))))
-
+	                  c(120,22,19, 8,5,1,39,12,12, 103, 3, 80, 31, 8,14))
+	smoking.Zp<-t(rep(1,2))\%x\%cbind(diag(3)\%x\%rep(1,3), rep(1,3)\%x\%diag(3))
 	smoking.Rp<-rbind(c(3,3),c(3,3))
-
 	smoking.catdata<-readCatdata(TF=smoking.TF,Zp=smoking.Zp,Rp=smoking.Rp)
 	smoking.satmcarwls<-satMcarWLS(smoking.catdata)
 	smoking.satmcarwls
 }
 
+\keyword{package}
 \keyword{categorical data}

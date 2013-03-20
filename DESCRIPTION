@@ -1,6 +1,6 @@
 Package: ACD
-Version: 1.0-0
-Date: 2012-11-27
+Version: 1.5
+Date: 2013-03-20
 Title: Categorical data analisys with complete or missing responses
 Author: Frederico Zanqueta Poleto, Julio da Mota Singer, Daniel Carlos
         Paulino, Fabio Mathias Correa and Enio Galinkin Jelihovschi
@@ -10,5 +10,6 @@ Description: Categorical data analisys with complete or missing
 Depends: R(>= 2.13.0)
 License: GPL (>= 2)
 Repository: CRAN
-Date/Publication: 2012-11-27 06:43:33
-Packaged: 2012-11-27 02:58:05 UTC; fmc
+Date/Publication: 2013-03-21 10:14:41
+Packaged: 2013-03-19 18:43:06 UTC; mars
+NeedsCompilation: no
