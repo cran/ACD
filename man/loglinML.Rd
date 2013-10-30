@@ -173,7 +173,7 @@
 	#Saturated generalized log-linear model, freedom equation formulation
 	e91.loglinml4 
 	
-	#95% confidence interval for log-odds ratio and for odds ratio
+	#95\% confidence interval for log-odds ratio and for odds ratio
 	round(e91.loglinml4$beta+c(-1,1)*qnorm(0.975)*sqrt(e91.loglinml4$Vbeta),3)
 	round(exp(e91.loglinml4$beta),3)
 	round(exp(e91.loglinml4$beta+c(-1,1)*qnorm(0.975)*sqrt(e91.loglinml4$Vbeta)),3)

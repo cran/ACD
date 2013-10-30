@@ -52,27 +52,27 @@ with the collaboration of \cr
 	Enio Galinkin Jelihovschi (\email{eniojelihovs@gmail.com})\cr
 }
 \references{
-				Paulino, C.D. e Singer, J.M. (2006). \emph{Analise de dados categorizados} 
-				(in Portuguese). Sao Paulo: Edgard Blucher.
+	Paulino, C.D. e Singer, J.M. (2006). \emph{Analise de dados categorizados} 
+	(in Portuguese). Sao Paulo: Edgard Blucher.
 
-				Poleto, F.Z. (2006). \emph{Analise de dados categorizados com omissao} (in 
-				Portuguese). Dissertacao de mestrado. IME-USP. 
-				\url{http://www.poleto.com/missing.html}.
+	Poleto, F.Z. (2006). \emph{Analise de dados categorizados com omissao} (in 
+	Portuguese). Dissertacao de mestrado. IME-USP. 
+	\url{http://www.poleto.com/missing.html}.
 
-				Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2007). \emph{Analyzing categorical 
-								data with complete or missing responses using the Catdata package}. Unpublished 
-				vignette. \url{http://www.poleto.com/missing.html}.
+	Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2007). \emph{Analyzing categorical 
+	data with complete or missing responses using the Catdata package}. Unpublished 
+	vignette. \url{http://www.poleto.com/missing.html}.
 
-				Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2012). A product-multinomial 
-				framework for categorical data analysis with missing responses. 
-				To appear in \emph{Brazilian Journal of Probability and Statistics}. 
-				\url{http://imstat.org/bjps/papers/BJPS198.pdf}.
+	Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2012). A product-multinomial 
+	framework for categorical data analysis with missing responses. 
+	To appear in \emph{Brazilian Journal of Probability and Statistics}. 
+	\url{http://imstat.org/bjps/papers/BJPS198.pdf}.
 
-				Singer, J. M., Poleto, F. Z. and Paulino, C. D. (2007). Catdata: software for 
-				analysis of categorical data with complete or missing responses. \emph{Actas 
-								de la XII Reunion Cientifica del Grupo Argentino de Biometria y I Encuentro 
-								Argentino-Chileno de Biometria}. 
-				\url{http://www.poleto.com/SingerPoletoPaulino2007GAB.pdf}.
+	Singer, J. M., Poleto, F. Z. and Paulino, C. D. (2007). Catdata: software for 
+	analysis of categorical data with complete or missing responses. \emph{Actas 
+	de la XII Reunion Cientifica del Grupo Argentino de Biometria y I Encuentro 
+	Argentino-Chileno de Biometria}.
+	\url{http://www.poleto.com/SingerPoletoPaulino2007GAB.pdf}.
 }
 
 \examples{

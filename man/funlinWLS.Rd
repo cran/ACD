@@ -17,8 +17,8 @@
 	specification, different arguments must be informed.
 }
 
-\usage{funlinWLS(model, obj, theta, Vtheta, A1, A2, A3, A4, A5, A6, A7, A8, A9, 
-	X, U, XL, UL, zeroN, PI1, PI2, PI3, PI4, PI5, PI6, PI7, PI8, PI9)
+\usage{funlinWLS(model, obj, theta, Vtheta, A1, A2, A3, A4, A5, A6, A7, A8, 
+	A9,	X, U, XL, UL, zeroN, PI1, PI2, PI3, PI4, PI5, PI6, PI7, PI8, PI9)
 }
 
 \arguments{
@@ -30,11 +30,12 @@
 	\item{theta}{BAN estimate of the product-multinomial probabilities.}
 	\item{Vtheta}{consistent estimate of asymptotic covariance matrix of the estimators of theta.}
 	\item{A1}{a matrix for the 1st linear function; for linear model 
-		(\code{model="lin"}) the default is a matrix 
+		(\code{model = "lin"}) the default is a matrix 
 		diag(\var{S}) \%x\% cbind(diag(\var{R-1}),rep(\var{0},\var{R-1})) which
 		discards the last element of the vector of probabilies of each multinomial; for log-linear model 
-		(\code{model=c("lin","log")}) the default is a matrix 
-		diag(\var{S}) \%x\% cbind(diag(\var{R-1}),rep(\var{-1},\var{R-1})) which
+		(\code{model=c("lin", "log")}) the default is a matrix 
+		diag(\var{S}) \%x\% cbind(diag(\var{R-1}), 
+		rep(\var{-1},\var{R-1})) which
 		generates logits with the last category as the baseline.}
 	\item{A2}{a matrix for the 2nd linear function.}
 	\item{A3}{a matrix for the 3rd linear function.}
@@ -53,8 +54,9 @@
 		for the ordinary log-linear specification.}
 	\item{XL}{a model specification matrix for freedom equation formulation of 
 		generalized log-linear models (\code{model=c("lin","log")}).}
-	\item{UL}{a matrix for constraint formulation of generalized log-linear 
-		models (\code{model=c("lin","log")}).}
+	\item{UL}{a matrix for constraint formulation of generalized log-linear
+	   
+		models (\code{model=c("lin", "log")}).}
 	\item{zeroN}{for complete data, the vector has \var{S} values that are used to replace null 
 		frequencies in each subpopulation in order to compute the proportions used in the estimate 
 		for the covariance matrix; the default value is \code{1/(R*ns)}, where \var{ns} is 
@@ -110,8 +112,8 @@
 	
 	Specifically for log-linear models (\code{model=c("lin","log")}), X and U are used 
 	for ordinary log-linear models, and XL and UL are used for generalized log-linear models, 
-	namely log(Theta)=nu+X\%*\%Beta, U\%*\%log(Theta)=0, A1\%*\%log(Theta)=XL\%*\%Beta, 
-	UL\%*\%A1\%*\%log(Theta)=0, where nu are non-estimated parameters included only to satisfy 
+	namely log(Theta) = nu+X\%*\%Beta, U\%*\%log(Theta) = 0, A1\%*\%log(Theta) = XL\%*\%Beta, 
+	UL\%*\%A1\%*\%log(Theta) = 0, where nu are non-estimated parameters included only to satisfy 
 	the natural constraints of the product-multinomial distribution.
 	
 	The generic functions \code{print} and \code{summary} are used to print the results and to obtain a
@@ -153,27 +155,27 @@
 }
 
 \references{
-				Paulino, C.D. e Singer, J.M. (2006). \emph{Analise de dados categorizados} 
-				(in Portuguese). Sao Paulo: Edgard Blucher.
+	Paulino, C.D. e Singer, J.M. (2006). \emph{Analise de dados categorizados} 
+	(in Portuguese). Sao Paulo: Edgard Blucher.
 
-				Poleto, F.Z. (2006). \emph{Analise de dados categorizados com omissao} (in 
-				Portuguese). Dissertacao de mestrado. IME-USP. 
-				\url{http://www.poleto.com/missing.html}.
+	Poleto, F.Z. (2006). \emph{Analise de dados categorizados com omissao} (in 
+	Portuguese). Dissertacao de mestrado. IME-USP. 
+	\url{http://www.poleto.com/missing.html}.
 
-				Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2007). \emph{Analyzing categorical 
-								data with complete or missing responses using the Catdata package}. Unpublished 
-				vignette. \url{http://www.poleto.com/missing.html}.
+	Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2007). \emph{Analyzing categorical 
+		data with complete or missing responses using the Catdata package}. Unpublished 
+	vignette. \url{http://www.poleto.com/missing.html}.
 
-				Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2012). A product-multinomial 
-				framework for categorical data analysis with missing responses. 
-				To appear in \emph{Brazilian Journal of Probability and Statistics}. 
-				\url{http://imstat.org/bjps/papers/BJPS198.pdf}.
+	Poleto, F.Z., Singer, J.M. e Paulino, C.D. (2012). A product-multinomial 
+	framework for categorical data analysis with missing responses. 
+	To appear in \emph{Brazilian Journal of Probability and Statistics}. 
+	\url{http://imstat.org/bjps/papers/BJPS198.pdf}.
 
-				Singer, J. M., Poleto, F. Z. and Paulino, C. D. (2007). Catdata: software for 
-				analysis of categorical data with complete or missing responses. \emph{Actas 
-								de la XII Reunion Cientifica del Grupo Argentino de Biometria y I Encuentro 
-								Argentino-Chileno de Biometria}. 
-				\url{http://www.poleto.com/SingerPoletoPaulino2007GAB.pdf}.
+	Singer, J. M., Poleto, F. Z. and Paulino, C. D. (2007). Catdata: software for 
+	analysis of categorical data with complete or missing responses. \emph{Actas 
+		de la XII Reunion Cientifica del Grupo Argentino de Biometria y I Encuentro 
+		Argentino-Chileno de Biometria}. 
+	\url{http://www.poleto.com/SingerPoletoPaulino2007GAB.pdf}.
 }
 
 
@@ -213,17 +215,28 @@
 
 	e115.X2<-rbind(c(0,0,0),c(0,1,0),c(1,0,0),c(1,1,1))
 
-	e115.loglinwls1<-funlinWLS(model=c("lin","log"),obj=e115.catdata,U=e115.U)
-	e115.loglinwls2<-funlinWLS(model=c("lin","log"),obj=e115.catdata,X=e115.X)
-	e115.loglinwls3<-funlinWLS(model=c("lin","log"),obj=e115.catdata,X=e115.X2)
-	e115.loglinwls4<-funlinWLS(model=c("lin","log"),obj=e115.catdata,A1=c(1,-1,-1,1), XL=1) 
+	e115.loglinwls1<-funlinWLS(model=c("lin", "log"), obj=e115.catdata, 
+				U=e115.U)
+	e115.loglinwls2<-funlinWLS(model=c("lin", "log"), obj=e115.catdata, 
+				X=e115.X)
+	e115.loglinwls3<-funlinWLS(model=c("lin", "log"), obj=e115.catdata, 
+				X=e115.X2)
+	e115.loglinwls4<-funlinWLS(model=c("lin", "log"), obj=e115.catdata, 
+				A1=c(1,-1,-1,1), XL=1) 
 
-	e115.loglinwls1 #Independence ordinary log-linear model, constraint formulation
-	e115.loglinwls2 #Independence ordinary log-linear model, freedom equation formulation
-	e115.loglinwls3 #Saturated ordinary log-linear model, freedom equation formulation
-	e115.loglinwls4 #Saturated generalized log-linear model, freedom equation formulation
+	#Independence ordinary log-linear model, constraint formulation
+	e115.loglinwls1 
+	
+	#Independence ordinary log-linear model, freedom equation formulation
+	e115.loglinwls2 
 
-	#95% confidence interval for log-odds ratio and for odds ratio
+	#Saturated ordinary log-linear model, freedom equation formulation
+	e115.loglinwls3 
+
+	#Saturated generalized log-linear model, freedom equation formulation
+	e115.loglinwls4 
+
+	#95\% confidence interval for log-odds ratio and for odds ratio
 
 	round(e115.loglinwls4$beta+c(-1,1)*qnorm(0.975)*sqrt(e115.loglinwls4$Vbeta),3) 
 	round(exp(e115.loglinwls4$beta),3)
@@ -280,15 +293,20 @@
 
 	e1112.A4<-t(c(1,-1))
 	
-	e1112.kappa<-funlinWLS(model=c("add","exp","lin","log","lin","exp","lin","log","lin"),
-						   obj=e1112.catdata,A1=e1112.A1,A2=e1112.A2,A3=e1112.A3,A4=e1112.A4,PI1=-1,X=1)
+	e1112.kappa<-funlinWLS(model = c("add", "exp", "lin", "log", "lin", 
+	"exp", "lin", "log", "lin"),
+	obj=e1112.catdata, A1=e1112.A1, A2=e1112.A2, A3=e1112.A3, A4=e1112.A4, 
+	PI1=-1, X=1)
+
 	# confidence interval
 	round(e1112.kappa$beta+c(-1,1)*qnorm(0.975)*sqrt(e1112.kappa$Vbeta),3)
 
 	#weighted kappa (Spitzer, Cohen, Fleiss e Endicott, 1967)
-
-	W1<-c(1,0.75,0,0.75,1,0.75,0,0.75,1) #squared weights (Fleiss e Cohen, 1973) 
-	W2<-c(1,0.5,0,0.5,1,0.5,0,0.5,1) #absolute weights (Cicchetti e Allison, 1971) 
+ 	#squared weights (Fleiss e Cohen, 1973) 
+	W1<-c(1,0.75,0,0.75,1,0.75,0,0.75,1)
+ 	
+	#absolute weights (Cicchetti e Allison, 1971) 
+	W2<-c(1,0.5,0,0.5,1,0.5,0,0.5,1)
 
 	e1112.w1A1<-rbind(t(W1),rep(1,9),kronecker(diag(3),t(rep(1,3))),
 					  kronecker(t(rep(1,3)),diag(3)))
@@ -297,24 +315,28 @@
 					  kronecker(t(rep(1,3)),diag(3)))
 
 	e1112.wA2<-rbind(cbind(diag(2),matrix(0,2,6)),cbind(matrix(0,9,2),
-					 cbind(kronecker(diag(3),rep(1,3)),kronecker(rep(1,3),diag(3)))))
+		 cbind(kronecker(diag(3),rep(1,3)),kronecker(rep(1,3),diag(3)))))
 
 	e1112.w1A3<-cbind(c(1,0),c(1,1),kronecker(-c(2,1),t(W1)))
 
 	e1112.w2A3<-cbind(c(1,0),c(1,1),kronecker(-c(2,1),t(W2)))
 
-	e1112.kappaw1<-funlinWLS(model=c("add","exp","lin","log","lin","exp","lin","log","lin"),
-	 obj=e1112.catdata,A1=e1112.w1A1,A2=e1112.wA2,A3=e1112.w1A3,A4=e1112.A4,PI1=-1,X=1)
+	e1112.kappaw1<-funlinWLS(model=c("add", "exp", "lin", "log", "lin", 
+	"exp", "lin", "log", "lin"),
+	 obj=e1112.catdata, A1=e1112.w1A1, A2=e1112.wA2, A3=e1112.w1A3, A4=e1112.A4,
+	 PI1=-1, X=1)
 
-	e1112.kappaw2<-funlinWLS(model=c("add","exp","lin","log","lin","exp","lin","log","lin"),
-	 obj=e1112.catdata,A1=e1112.w2A1,A2=e1112.wA2,A3=e1112.w2A3,A4=e1112.A4,PI1=-1,X=1)
+	e1112.kappaw2<-funlinWLS(model=c("add", "exp", "lin", "log", "lin",
+     	"exp", "lin","log", "lin"),
+	 obj=e1112.catdata, A1=e1112.w2A1, A2=e1112.wA2, A3=e1112.w2A3, A4=e1112.A4,
+	 PI1=-1, X=1)
 
 	#Example 1 of Poleto et al (2012)
 	smoking.TF<-rbind(c(167,17,19,10,1,3,52,10,11, 176,24,121, 28,10,12),
 	                  c(120,22,19, 8,5,1,39,12,12, 103, 3, 80, 31, 8,14))
 
 	smoking.Zp<-kronecker(t(rep(1,2)),cbind(kronecker(diag(3),rep(1,3)),
-											kronecker(rep(1,3),diag(3))))
+			kronecker(rep(1,3),diag(3))))
 
 	smoking.Rp<-rbind(c(3,3),c(3,3))
 
@@ -328,12 +350,14 @@
 	smoking.E<-rbind(c(1,-1,0),c(0,1,-1))
 	smoking.A<-kronecker(kronecker(diag(2),smoking.E),smoking.E)
 
-	smoking.loglin2.marhybrid<-funlinWLS(model=c("lin","log"),
-								obj=smoking.satmarml,A1=smoking.A,XL=rep(1,8))
-	smoking.loglin2.mcarhybrid<-funlinWLS(model=c("lin","log"),
-								obj=smoking.satmcarml,A1=smoking.A,XL=rep(1,8))
-	smoking.loglin2.mcarwls<-funlinWLS(model=c("lin","log"),
-								obj=smoking.satmcarwls,A1=smoking.A,XL=rep(1,8))
+	smoking.loglin2.marhybrid<-funlinWLS(model=c("lin","log"), 
+			obj=smoking.satmarml, A1=smoking.A, XL=rep(1,8))
+
+	smoking.loglin2.mcarhybrid<-funlinWLS(model=c("lin","log"), 
+			obj=smoking.satmcarml, A1=smoking.A, XL=rep(1,8))
+
+	smoking.loglin2.mcarwls<-funlinWLS(model=c("lin","log"), 
+			obj=smoking.satmcarwls, A1=smoking.A, XL=rep(1,8))
 
 	#MNAR example
 	#Minus log-likelihood of the MNAR described in the last paragraph of Section 3
@@ -393,9 +417,9 @@
 	value
 	}
 
-	mnar.fit<-constrOptim(theta=c(rep(1/9,16),rep(1/3,12)),f=mnar.mll,
-				method="Nelder-Mead",ui=diag(28),ci=rep(0,28),
-				control=list(maxit=10000),outer.iterations=1000,fr=smoking.TF)
+	mnar.fit<-constrOptim(theta=c(rep(1/9,16), rep(1/3,12)), f=mnar.mll,
+				method="Nelder-Mead", ui=diag(28), ci=rep(0,28),
+				control=list(maxit=10000), outer.iterations=1000, fr=smoking.TF)
 
 	#hessian matrix
 	mnar.der<-deriv3(~-(
@@ -452,10 +476,10 @@
 		TF[1,11],TF[1,12],TF[1,13],TF[1,14],TF[1,15], 
 		TF[2,1],TF[2,2],TF[2,3],TF[2,4],TF[2,5],TF[2,6],TF[2,7],TF[2,8],TF[2,9],TF[2,10], 
 		TF[2,11],TF[2,12],TF[2,13],TF[2,14],TF[2,15])
-	b<-smoking.catdata$b #b in (8), i.e., rep(1,2)%x%c(rep(0,8),1)
-	B<-smoking.catdata$B #B in (8), i.e., diag(2)%x%rbind(diag(8),rep(-1,8))
+	b<-smoking.catdata$b #b in (8), i.e., rep(1,2)\%x\%c(rep(0,8),1)
+	B<-smoking.catdata$B #B in (8), i.e., diag(2)\%x\%rbind(diag(8),rep(-1,8))
 
-	smoking.loglin2mnar.hybrid<-funlinWLS(model=c("lin","log"), 
+	smoking.loglin2mnar.hybrid<-funlinWLS(model=c("lin","log"),  
 		theta=as.vector(b+c(B\%*\%mnar.fit$par[1:16])), 
 		Vtheta=B\%*\%solve(attr(mnar.InfObs,"hessian")[1,,])[1:16,1:16]\%*\%t(B),
 		A1=smoking.A,X=rep(1,8))

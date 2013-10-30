@@ -72,7 +72,8 @@ e117.X1<-rbind(c(1,0,0,0),
            	   c(1,0,0,2),
                c(0,1,0,1))
 
-e117.loglinwls1<-funlinWLS(model=c("lin","log"),obj=e117.catdata,A1=e117.A,XL=e117.X1)
+e117.loglinwls1<-funlinWLS(model=c("lin","log"), obj=e117.catdata, 
+	A1=e117.A,XL=e117.X1)
 waldTest(obj=e117.loglinwls1,C=cbind(0*diag(2),diag(2)))
 }
 

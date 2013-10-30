@@ -157,7 +157,8 @@ smoking.catdata
 
 #Example 2 of Poleto et al (2012)
 #S=10 subpopulation, R=8 response categories, with missing data
-#in each subpopulation: 6 missingness patterns, 3 patterns with 4 response classes each, and other 3 patterns with 2 response classes
+#in each subpopulation: 6 missingness patterns, 3 patterns with 4 response
+#classes each, and other 3 patterns with 2 response classes
 obes.TF<-rbind(
 	c(90, 9, 3, 7, 0,1, 1, 8,16, 5,0, 0, 9,3,0,0,129,18,6,13,32, 5,33,11,70,24),
 	c(150,15, 8, 8, 8,9, 7,20,38, 3,1,11,16,6,1,3, 42, 2,3,13,45, 7,33, 4,55,14),
